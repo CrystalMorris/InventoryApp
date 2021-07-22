@@ -7,7 +7,7 @@
       {"name" : "Sky Dancer", "image": "/img/skydancer.jpg", "description": "Sky Dancers is the name of a line of toys and an animated show spin-off that were popular in the mid-1990s.", "price": 12.99, "category": "Dolls"},
       {"name" : "PooChi", "image": "/img/poochi.jpg", "description": "Poo-Chi (or Poochi, Poochie), one of the first generations of robopet toys, is a robot dog manufactured by Sega Toys, and distributed by Tiger Toys. Poo-Chi was released in 2000 and discontinued in 2002.", "price": 32.99, "category": "Electronic Toys"},
       {"name" : "Gak Splat", "image": "/img/GakSplat.jpg", "description": "Nickelodeon/Mattel's most popular compound[citation needed]; the product was inspired by the Nickelodeon show Double Dare. It made a fart noise when squeezed into its clear, star-shaped container.", "price": 9.99, "category": "Creative Toys"},
-      {"name" : "Etch A Sketch", "image": "/img/etchasketch.jpg", "description": "Etch A Sketch is a mechanical drawing toy invented by André Cassagnes of France. The Etch A Sketch was introduced near the peak of the Baby Boom on 12 July 1960 for $2.99 (equivalent to $26 in 2020).", "price": 14.99, "category": "Creative Toys"}
+      {"name" : "Etch A Sketch", "image": "/img/etchasketch.jpg", "description": "Etch A Sketch is a mechanical drawing toy invented by André Cassagnes of France. The Etch A Sketch was introduced near the peak of the Baby Boom on 12 July 1960 for $2.99.", "price": 14.99, "category": "Creative Toys"}
   ]  
 }
 
