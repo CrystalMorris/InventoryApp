@@ -2,9 +2,9 @@ const {Sequelize, DataTypes, Model} = require('sequelize')
 const {sequelize} = require('../db')
 
 
-class Inventory extends Model {}
+class Item extends Model {}
 
-Inventory.init({
+Item.init({
     name: DataTypes.STRING,
     image: DataTypes.STRING,
     description: DataTypes.STRING,
@@ -16,4 +16,4 @@ Inventory.init({
 });
  
 
-module.exports = {Inventory};
+module.exports = {Item};
