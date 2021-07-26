@@ -28,13 +28,25 @@ seed();
 app.get('/items', async (req, res) => {
 	const items = await Item.findAll()
 	res.render('items', {items})
-})
+  //res.json({items})
+}
 
 //GET one item at a time
 
 app.get('/item/:id', async (req, res) => {
 	const oneItem = await Item.findByPk(req.params.id)
 	res.render('item', {oneItem})
+})
+
+app.post('/:warehouseId/addItem', async (req, res) =>{
+    const newItem = await Item.create(req.body);
+    const foundItem = await Item.findByPk(newItem.id)
+    if(foundItem){
+        res.status(201).send('New Item Added!')
+    } else { 
+        console.log("New Item not added")
+        res.send("Error: New Item was not added")
+    }
 })
 
 
