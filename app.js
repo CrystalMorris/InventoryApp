@@ -2,7 +2,7 @@ const express = require('express');
 const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
-
+const {Warehouse} = require('./models/warehouse')
 const {sequelize} = require('./db');
 const {Item} = require('./models/item');
 const seed = require('./seed')
@@ -37,6 +37,11 @@ app.get('/item/:id', async (req, res) => {
 	const item = await Item.findByPk(req.params.id)
 	res.render('item', {item})
 })
+app.get('/warehouses', async (req, res)=>{
+    const allWarehouses = await Warehouse.findAll();
+    res.render('warehouses', {allWarehouses})
+})
+
 
 app.post('/:warehouseId/addItem', async (req, res) =>{
     const newItem = await Item.create(req.body);
