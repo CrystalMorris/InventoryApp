@@ -29,15 +29,26 @@ seed();
 //     res.render('items', {allItems});
 // })
 
-app.get('/item', async (req, res) => {
-	const oneItems = await Item.findAll()
-	res.json({oneItems})
+app.get('/items', async (req, res) => {
+	const items = await Item.findAll()
+	res.json({items})
 })
 
 
 app.get('/item/:id', async (req, res) => {
 	const oneItems = await Item.findByPk(req.params.id)
 	res.json({oneItems})
+})
+
+app.post('/:warehouseId/addItem', async (req, res) =>{
+    const newItem = await Item.create(req.body);
+    const foundItem = await Item.findByPk(newItem.id)
+    if(foundItem){
+        res.status(201).send('New Item Added!')
+    } else { 
+        console.log("New Item not added")
+        res.send("Error: New Item was not added")
+    }
 })
 
 
