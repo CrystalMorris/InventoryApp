@@ -29,7 +29,7 @@ app.get('/items', async (req, res) => {
 	const items = await Item.findAll()
 	res.render('items', {items})
   //res.json({items})
-}
+})
 
 //GET one item at a time
 
