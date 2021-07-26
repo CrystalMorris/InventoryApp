@@ -24,20 +24,18 @@ app.use(express.static('public'));
 seed();
 
 // // GET all items
-// app.get('/items', async (req, res) => {
-//     const allItems= await Item.findAll()
-//     res.render('items', {allItems});
-// })
 
 app.get('/items', async (req, res) => {
 	const items = await Item.findAll()
-	res.json({items})
-})
+	res.render('items', {items})
+  //res.json({items})
+}
 
+//GET one item at a time
 
 app.get('/item/:id', async (req, res) => {
-	const oneItems = await Item.findByPk(req.params.id)
-	res.json({oneItems})
+	const oneItem = await Item.findByPk(req.params.id)
+	res.render('item', {oneItem})
 })
 
 app.post('/:warehouseId/addItem', async (req, res) =>{
