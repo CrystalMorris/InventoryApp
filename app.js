@@ -34,8 +34,8 @@ app.get('/items', async (req, res) => {
 //GET one item at a time
 
 app.get('/item/:id', async (req, res) => {
-	const oneItem = await Item.findByPk(req.params.id)
-	res.render('item', {oneItem})
+	const item = await Item.findByPk(req.params.id)
+	res.render('item', {item})
 })
 
 app.post('/:warehouseId/addItem', async (req, res) =>{
