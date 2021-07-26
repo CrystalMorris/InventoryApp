@@ -15,7 +15,7 @@ describe('Warehouse Model', () => {
 
 	test('warehouse has a locatinon', async() => {
 		const testWarehouse2 = await Warehouse.create({name: 'South Side', location:'123 Southview Ln., Someplace, USA'})	
-		expect(testWarehouse2.location).toBe('123 South view Ln., Someplace, USA')
+		expect(testWarehouse2.location).toBe('123 Southview Ln., Someplace, USA')
 	})
 
 	test('warehouse is added to the database', async() => {		
