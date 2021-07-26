@@ -1,4 +1,4 @@
-### collaborators:
+### Collaborators:
 - Crystal Morris
 - Stanley Enyinnaya
 - Ashley Umetsu
