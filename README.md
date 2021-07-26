@@ -1,13 +1,20 @@
-# swe-inventory-app-starter
-Boilerplate code for SWE Bootcamp Project
+### collaborators:
+- Crystal Morris
+- Stanley Enyinnaya
+- Ashley Umetsu
 
-## How to use 
-1. Fork this repo
-2. Check out the sample task board.
-3. npm install
-4. Find your bliss!
+### Description of Product
 
-**********************************************************************************
+We have built an inventory app for toy resale shops around Texas. There are 3 warehouses each with their own inventory.
+You can view all inventory in each warehouse and also view more details for each item. 
+You can also add a new item to the inventory with the "add new toy" form.
+
+### Installation Instructions
+
+type in the terminal:
+1. npm install
+2. npm start
+
 ### Team Constitution
 
 1. Be present - notify team if you must be away.
