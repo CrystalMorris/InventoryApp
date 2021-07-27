@@ -35,6 +35,25 @@ a:hover {
   text-decoration: none;
 }
 
+.button {
+  margin-top: 100px;
+  border: 2px solid #9da5f3;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: helvetica;
+}
+
+.button:hover {
+  background-color: #9da5f3;
+  color: white;
+  text-decoration: none;
+}
+
 h2 {
   font-family: helvetica;
 }
@@ -71,12 +90,12 @@ form {
   margin-top: 50px;
 }
 
-.add-restaurant-button {
+.back-to-warehouses {
   margin-top: 100px;
   border: 2px solid #9da5f3;
 }
 
-.add-restaurant-button:hover {
+.back-to-warehouses:hover {
   background-color: #9da5f3;
   color: white;
   text-decoration: none;
