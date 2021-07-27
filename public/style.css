@@ -40,7 +40,7 @@ a:hover {
 
 .button {
   position: fixed;
-  bottom: 75px;
+  margin-top: 50px;
   left: 50%;
   transform: translateX(-50%);
   border: 2px dotted #ff746d;
@@ -119,14 +119,10 @@ form {
 }
 
 .back-to-warehouses {
-  position: fixed;
-  margin-top: 25px;
-  bottom: 75px;
-  left: 50%;
-  transform: translateX(-50%);
   background-color:white;
   border: 2px dotted #ff746d;
   color: black;
+  margin-right: 25px;
 }
 
 .back-to-warehouses:hover {
@@ -137,11 +133,6 @@ form {
 }
 
 .addItem {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%); */
-  /margin-top: 100px;
   background-color:white;
   border: 2px dotted #00a4d3;
   color: black;
@@ -152,4 +143,9 @@ form {
   color: white;
   text-decoration: none;
   border: 2px dotted #00a4d3;
+}
+
+.site-nav {
+  position: relative;
+  margin-bottom: 10px;
 }
