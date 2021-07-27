@@ -5,6 +5,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const {sequelize} = require('./db');
 const {Item, Warehouse, Category} = require('./models/index');
 const seed = require('./seed')
+const bodyParser = require('body-parser')
 
 const PORT = 3000;
 
@@ -19,6 +20,8 @@ app.set('view engine', 'handlebars');
 
 // serve static assets from the public/ folder
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json())
 
 seed();
 
@@ -34,23 +37,29 @@ app.get('/items', async (req, res) => {
 
 app.get('/item/:id', async (req, res) => {
     const thisItem = await Item.findByPk(req.params.id)
-    const thisCategory = await Category.findByPk(thisItem.CategoryId)
-	res.render('item', {item: thisItem, thisCategory: thisCategory})
+    const categoryId = thisItem.CategoryId  
+    const thisCategory = await Category.findByPk(categoryId)
+    console.log(thisItem.name)
+	res.render('item', {thisItem: thisItem, thisCategory: thisCategory})
 })
 app.get('/warehouses', async (req, res)=>{
     const allWarehouses = await Warehouse.findAll();
     res.render('warehouses', {allWarehouses})
 })
+app.get('/addItem', async (req, res)=>{
+    const allWarehouses = await Warehouse.findAll()
+    const allCategories = await Category.findAll()
+    res.render('addItem',{allWarehouses: allWarehouses, allCategories:allCategories});
+})
 
-
-app.post('warehouses/:id/addItem', async (req, res) =>{
+app.post('/addItem/post', async (req, res) =>{    
     const newItem = await Item.create(req.body);
     const foundItem = await Item.findByPk(newItem.id)
+    console.log(newItem) 
     if(foundItem){
         res.status(201).send('New Item Added!')
     } else { 
         console.log("New Item not added")
-        res.send("Error: New Item was not added")
     }
 })
 

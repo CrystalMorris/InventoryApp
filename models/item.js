@@ -9,7 +9,7 @@ Item.init({
     image: DataTypes.STRING,
     description: DataTypes.STRING,
     price: DataTypes.DECIMAL(5,2),
-    category: DataTypes.STRING
+    
 }, {
     sequelize,
     timestamps: false,
