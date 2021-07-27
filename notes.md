@@ -94,5 +94,6 @@ deleteBtn.addEventListener('click', async (e) => {
 
 footer {
 	position: relative
+	left: 50vw //50% of viewport width
 }
 ```
