@@ -1,0 +1,30 @@
+<h2>Add an item to the inventory</h2>
+
+<form action = "/addItem/post" method="POST">
+<label for="name">Name: </label>
+<input type="text" id="name" name = "name" required><br>
+
+<label for = "price">Price: $</label>
+<input type="text" id="price" name = "price" required><br>
+<label for = "image">Image URL: </label>
+<input type="text" id="image" name = "image" required><br>
+<label for = "description">Description: </label>
+<textarea  id="description" name = "description" rows="5" cols="50" required>Add Description here</textarea><br>
+    <label for="CategoryId">Select a category:</label>
+    <select id="CategoryId" name="CategoryId">
+        <option value=""></option>
+        {{#each allCategories}}
+        <option value ="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+    <label for="WarehouseId">Select a warehouse:</label>
+    <select id="WarehouseId" name="WarehouseId">
+        <option value=""></option>
+        {{#each allWarehouses}}
+        <option value ="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+    </select><br>
+    {{!-- <label for="image">test file upload</label>
+    <input type="file" accept="img/*" id="image" name = "image" ><br> --}}
+    <button type="submit">Add Item</button>
+</form>
