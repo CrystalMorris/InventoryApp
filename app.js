@@ -2,9 +2,8 @@ const express = require('express');
 const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
-const {Warehouse} = require('./models/warehouse')
 const {sequelize} = require('./db');
-const {Item} = require('./models/item');
+const {Item, Warehouse, Category} = require('./models/index');
 const seed = require('./seed')
 
 const PORT = 3000;
@@ -26,7 +25,7 @@ seed();
 // // GET all items
 
 app.get('/items', async (req, res) => {
-	const items = await Item.findAll()
+    const items = await Item.findAll()    
 	res.render('items', {items})
   //res.json({items})
 })
@@ -34,8 +33,9 @@ app.get('/items', async (req, res) => {
 //GET one item at a time
 
 app.get('/item/:id', async (req, res) => {
-	const item = await Item.findByPk(req.params.id)
-	res.render('item', {item})
+    const thisItem = await Item.findByPk(req.params.id)
+    const thisCategory = await Category.findByPk(thisItem.CategoryId)
+	res.render('item', {item: thisItem, thisCategory: thisCategory})
 })
 app.get('/warehouses', async (req, res)=>{
     const allWarehouses = await Warehouse.findAll();
@@ -43,7 +43,7 @@ app.get('/warehouses', async (req, res)=>{
 })
 
 
-app.post('/:warehouseId/addItem', async (req, res) =>{
+app.post('warehouses/:id/addItem', async (req, res) =>{
     const newItem = await Item.create(req.body);
     const foundItem = await Item.findByPk(newItem.id)
     if(foundItem){
@@ -53,6 +53,20 @@ app.post('/:warehouseId/addItem', async (req, res) =>{
         res.send("Error: New Item was not added")
     }
 })
+
+
+app.get('/warehouses/:id', async (req, res) =>{
+    const thisWarehouse = await Warehouse.findByPk(req.params.id)
+    const localItems = await Item.findAll({
+        where: {
+            WarehouseId: req.params.id
+        }
+    })
+    
+    res.render('warehouse', {thisWarehouse: thisWarehouse, localItems:localItems})
+
+    });
+
 
 
 app.listen(PORT, () => {
