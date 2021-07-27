@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #f0edf6;
   color: black;
   text-align: center;
 }
@@ -14,60 +14,75 @@ img {
 
 a {
   display: inline-block;
-  background-color: white; 
+  background-color: #cbe8ba; 
   color: black; 
-  border: 2px solid #4CAF50;
-  padding: 16px 32px;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 8px;
+  padding: 5px 22px;
   text-align: center;
   text-decoration: none;
   font-size: 12px;
-  margin-top: 4px;
+  margin-top: 20px;
   margin-bottom: 4px;
   transition-duration: 0.4s;
   cursor: pointer;
   text-transform: uppercase;
-  font-family: helvetica;
+  font-family: 'Acme', sans-serif;
 }
 
 a:hover {
-  background-color: #4CAF50;
-  color: white;
+  background-color: white;
+  border: 1px solid #78c94a;
+  color: black;
   text-decoration: none;
 }
 
 .button {
   margin-top: 100px;
-  border: 2px solid #9da5f3;
-  padding: 16px 32px;
+  border: 2px dotted #ff746d;
+  background-color: white;
+  color: black;
+  padding: 5px 22px;
+  border-radius: 8px;
   text-align: center;
   text-decoration: none;
   font-size: 12px;
   transition-duration: 0.4s;
   cursor: pointer;
   text-transform: uppercase;
-  font-family: helvetica;
+  font-family: 'Acme', sans-serif;
 }
 
 .button:hover {
-  background-color: #9da5f3;
+  background-color: #ff746d;
   color: white;
   text-decoration: none;
+  border: 2px dotted #ff746d;
+}
+
+h1 {
+  font-family: 'Allan', cursive;
+  font-size: 45px;
 }
 
 h2 {
-  font-family: helvetica;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
 }
 
 h3 {
-  font-family: fantasy;
+  font-family: 'Acme', sans-serif;
 }
 
 h4 {
-  font-family: Arial;
+  font-family: 'Acme', sans-serif;
 }
 
 h5 {
-  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 li {
@@ -92,11 +107,22 @@ form {
 
 .back-to-warehouses {
   margin-top: 100px;
-  border: 2px solid #9da5f3;
+  background-color:white;
+  border: 2px dotted #ff746d;
+  color: black;
 }
 
 .back-to-warehouses:hover {
-  background-color: #9da5f3;
+  background-color: #ff746d;
   color: white;
   text-decoration: none;
+  border: 2px dotted #ff746d;
+}
+
+.card {
+  margin-top: 40px;
+}
+
+.item-img {
+  margin-top: 20px;
 }
