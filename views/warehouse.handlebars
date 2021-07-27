@@ -2,17 +2,19 @@
 
 <h2>There are {{localItems.length}} items in stock.</h2>
 
-{{#each localItems}}  
-    <div class="card col-md-4">
-        <h3>{{name}}</h3>
-        <img class="item-img" src="{{image}}" />
-            <div>
-                <a href="/item/{{id}}">See Toy</a>
-            </div>
-    </div>
-{{/each}}
+<div class="site-nav">
+    <a href="/warehouses" class="back-to-warehouses">Back to All Warehouses</a>
+    <a href="/addItem" class="addItem">Add Item</a> 
+</div>
 
-<footer class="site-footer">
-        <a href="/addItem" class="addItem">Add Item</a>
-        <a href="/warehouses" class="back-to-warehouses">Back to All Warehouses</a>
-</footer>
+<div class="toy-cards">
+    {{#each localItems}}  
+        <div class="card col-md-4">
+            <h3>{{name}}</h3>
+            <img class="item-img" src="{{image}}" />
+                <div>
+                    <a href="/item/{{id}}">See Toy</a>
+                </div>
+        </div>
+    {{/each}}
+</div>
