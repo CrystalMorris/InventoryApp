@@ -20,7 +20,20 @@
         { "name": "Electronic"},
         { "name": "Physical Activity"},
         { "name": "Dolls"},
-        { "name": "Creative"}
+        { "name": "Creative"},
+        { "name": "Action figures"},
+        { "name": "Animals"},
+        { "name": "Cars and radio controlled"},
+        { "name": "Construction toys"},
+        { "name": "Executive toys"},
+        { "name": "Food-related toys"},
+        { "name": "Model building"},
+        { "name": "Games"},
+        { "name": "Puzzle/assembly"},
+        { "name": "Science and optical"},
+        { "name": "Sound toys"},
+        { "name": "Spinning toys"},
+        { "name": "Wooden toys"}   
     ],
     "items":[
         {
