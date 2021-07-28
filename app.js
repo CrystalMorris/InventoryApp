@@ -58,8 +58,10 @@ app.get('/addItem', async (req, res)=>{
 //POST the info from form to create a new item in db.sqlite
 app.post('/items', async (req, res) =>{    
     const newItem = await Item.create(req.body);
+    const thisWarehouse = await Warehouse.findByPk(newItem.WarehouseId)
     const items = await Item.findAll()  
-   res.redirect("/items")
+   //res.redirect("/items")
+   res.redirect('/warehouses/'+ thisWarehouse.id)
 })
 
 //GET a single warehouse and it's inventory
@@ -76,7 +78,7 @@ app.get('/item/:id/delete', async(req, res)=>{
     const thisWarehouse = await Warehouse.findByPk(thisItem.WarehouseId)
     Item.destroy({where: {id: req.params.id}});
     const foundItem = await Item.findByPk(req.params.id)
-        console.log(JSON.stringify(thisWarehouse))
+        console.log("this is app.js:79 " +JSON.stringify(thisWarehouse))
         res.redirect('/warehouses/'+ thisWarehouse.id)
     })
 
