@@ -11,7 +11,7 @@
 	</script>
 </div>
 
-<form action= "/addItem/post" method="POST" class="form-group">
+<form action = "/items" method="POST" class="form-group">
 <label for="name">Name: </label>
 <input type="text" class="form-control" id="name" name ="name" placeholder="Enter item name" required>
 
@@ -26,21 +26,19 @@
 
 <label for="CategoryId">Select a category: </label>
 <select class="form-control" id="CategoryId" name="CategoryId">
-    <option value=""></option>
-    {{#each allCategories}}
+        <option value=""></option>
+        {{#each allCategories}}
         <option value ="{{this.id}}">{{this.name}}</option>
-    {{/each}}
+        {{/each}}
     </select>
 
-<label for="WarehouseId">Select a warehouse:</label>
-<select class="form-control" id="WarehouseId" name="WarehouseId">
-    <option value=""></option>
+    <label for="WarehouseId">Select a warehouse:</label>
+    <select class="form-control" id="WarehouseId" name="WarehouseId">
+        <option value=""></option>
         {{#each allWarehouses}}
-            <option value ="{{this.id}}">{{this.name}}</option>
+        <option value ="{{this.id}}">{{this.name}}</option>
         {{/each}}
-</select>
-    {{!-- <label for="image">test file upload</label>
-    <input type="file" accept="img/*" id="image" name = "image" ><br> --}}
-<button type="submit" class="btn btn-primary formbtn">Add Item</button>
-
+    </select><br>
+   <button type="submit" class="btn btn-primary formbtn">Add Item</button>
+   
 </form>
