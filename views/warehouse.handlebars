@@ -1,6 +1,6 @@
 <h1>{{thisWarehouse.name}}</h1>
 
-<h2>There are {{localItems.length}} items in stock.</h2>
+<h2>There are {{thisWarehouse.Items.length}} items in stock.</h2>
 
 <div class="site-nav">
     <a href="/warehouses" class="back-to-warehouses">Back to All Warehouses</a>
@@ -8,7 +8,7 @@
 </div>
 
 <div class="toy-cards">
-    {{#each localItems}}  
+    {{#each thisWarehouse.Items}}  
         <div class="card col-md-4">
             <h3>{{name}}</h3>
             <img class="item-img" src="{{image}}" />
@@ -17,4 +17,4 @@
                 </div>
         </div>
     {{/each}}
-</div>
+    </div>

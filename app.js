@@ -36,45 +36,49 @@ app.get('/items', async (req, res) => {
 //GET one item at a time
 
 app.get('/item/:id', async (req, res) => {
-    const thisItem = await Item.findByPk(req.params.id)
-    const categoryId = thisItem.CategoryId  
-    const thisCategory = await Category.findByPk(categoryId)
-    console.log(thisItem.name)
-	res.render('item', {thisItem: thisItem, thisCategory: thisCategory})
+    const thisItem = await Item.findByPk(req.params.id,{include:{all:true}})
+    console.log("This warehouse's  " + thisItem.Warehouse)
+    res.render('item', {thisItem})
 })
+
+//GET all Warehouses
+
 app.get('/warehouses', async (req, res)=>{
     const allWarehouses = await Warehouse.findAll();
     res.render('warehouses', {allWarehouses})
 })
+
+//GET add item form
 app.get('/addItem', async (req, res)=>{
     const allWarehouses = await Warehouse.findAll()
     const allCategories = await Category.findAll()
     res.render('addItem',{allWarehouses: allWarehouses, allCategories:allCategories});
 })
 
-app.post('/addItem/post', async (req, res) =>{    
+//POST the info from form to create a new item in db.sqlite
+app.post('/items', async (req, res) =>{    
     const newItem = await Item.create(req.body);
-    const foundItem = await Item.findByPk(newItem.id)
-    console.log(newItem) 
-    if(foundItem){
-        res.status(201).send('New Item Added!')
-    } else { 
-        console.log("New Item not added")
-    }
+    const items = await Item.findAll()  
+   res.redirect("/items")
 })
 
+//GET a single warehouse and it's inventory
 
 app.get('/warehouses/:id', async (req, res) =>{
-    const thisWarehouse = await Warehouse.findByPk(req.params.id)
-    const localItems = await Item.findAll({
-        where: {
-            WarehouseId: req.params.id
-        }
-    })
-    
-    res.render('warehouse', {thisWarehouse: thisWarehouse, localItems:localItems})
+    const thisWarehouse = await Warehouse.findByPk(req.params.id, {include: {all:true}})
+    res.render('warehouse', {thisWarehouse})
+});
 
-    });
+//Delete an item from an inventory
+
+app.get('/item/:id/delete', async(req, res)=>{
+    const thisItem =await Item.findByPk(req.params.id)    
+    const thisWarehouse = await Warehouse.findByPk(thisItem.WarehouseId)
+    Item.destroy({where: {id: req.params.id}});
+    const foundItem = await Item.findByPk(req.params.id)
+        console.log(JSON.stringify(thisWarehouse))
+        res.redirect('/warehouses/'+ thisWarehouse.id)
+    })
 
 
 
