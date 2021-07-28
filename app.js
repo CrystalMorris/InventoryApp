@@ -30,7 +30,7 @@ seed();
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()    
 	res.render('items', {items})
-  //res.json({items})
+  res.json({items})
 })
 
 //GET one item at a time
@@ -76,6 +76,31 @@ app.get('/warehouses/:id', async (req, res) =>{
 
     });
 
+    // app.delete ('/web/item/:id', async (req, res) =>{
+    //     // const thisWarehouse = await Warehouse.findByPk(req.params.id)
+    //     // await Item.findByPk(req.params.id)
+    //     // console.log(thisItem)
+    //     await Item.destroy({
+    //         where: {
+    //             Id: req.params.id
+    //         }
+    //     })
+        
+    //     // res.render({thisWarehouse: thisWarehouse, deleteItem: deleteItem})
+
+    //     res.send('deleted!')
+    //     });
+
+        app.delete ('/web/item/:id', async (req, res) =>{
+            await Item.destroy({
+                where: {
+                    id : req.params.id
+                }
+            })
+            res.send('item deleted!')
+        })
+
+    
 
 
 app.listen(PORT, () => {
