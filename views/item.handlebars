@@ -8,10 +8,8 @@
 	{{!-- <h5>Quantity: {{thisItem.quantity}}</h5> --}}
 	<h5>Category: {{thisItem.Category.name}}</h5>
 </div>
-	<a href="/item/{{thisItem.id}}/delete">delete this item</a>
-<br><br>
 <div>
-    <button type="button" class="button" onclick="goPrev()">Back to Inventory</button>
+    <button type="button" class="button buttonOneItem" onclick="goPrev()">Back to Inventory</button>
 	<script>
 		function goPrev()
 		{
@@ -19,3 +17,7 @@
 		}
 	</script>
 </div> 
+
+<div>
+	<a href="/item/{{thisItem.id}}/delete" class="deleteButton">delete this item</a>
+</div>
