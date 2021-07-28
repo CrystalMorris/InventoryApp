@@ -1,6 +1,11 @@
 <h1>Current Inventory at Durian Toyz</h1>
 <h2>There are {{items.length}} items in stock.</h2>
 
+<div class="site-nav">
+    <a href="/warehouses" class="back-to-warehouses">Back to All Warehouses</a>
+    <a href="/addItem" class="addItem">Add Item</a> 
+</div>
+
 {{#each items}}  
     <div class="card col-md-3">
         <h3>{{name}}</h3>

@@ -1,3 +1,5 @@
+/* Main Styles */
+
 body {
   background-color: #f0edf6;
   color: black;
@@ -12,6 +14,50 @@ img {
   object-fit: cover;
   box-shadow: -6px 8px 5px grey;
 }
+
+h1 {
+  font-family: 'Allan', cursive;
+  font-size: 45px;
+}
+
+h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+}
+
+h3 {
+  font-family: 'Acme', sans-serif;
+}
+
+h4 {
+  font-family: 'Acme', sans-serif;
+}
+
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.back-to-list {
+  margin-top: 50px;
+}
+
+.card {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.item-img {
+  margin-top: 20px;
+}
+
+/* Button Styles */
 
 a {
   display: inline-block;
@@ -39,10 +85,8 @@ a:hover {
 }
 
 .buttonOneItem {
-  position: fixed;
+  position: relative;
   margin-top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
   border: 2px dotted #691969;
   background-color: white;
   color: black;
@@ -87,60 +131,6 @@ a:hover {
   border: 2px dotted #691969;;
 }
 
-h1 {
-  font-family: 'Allan', cursive;
-  font-size: 45px;
-}
-
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-}
-
-h3 {
-  font-family: 'Acme', sans-serif;
-}
-
-h4 {
-  font-family: 'Acme', sans-serif;
-}
-
-h5 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-li {
-  list-style-type: none;
-}
-
-/* form {
-  margin-top: 40px;
-} */
-
-.form-title {
-  font-size: 35px;
-}
-
-.form-button {
-  margin-top: 20px;
-}
-
-.back-to-list {
-  margin-top: 50px;
-}
-
-.card {
-  margin-top: 40px;
-  margin-bottom: 50px;
-}
-
-.item-img {
-  margin-top: 20px;
-}
-
 .back-to-warehouses {
   background-color:white;
   border: 2px dotted #691969;;
@@ -168,9 +158,32 @@ li {
   border: 2px dotted #00a4d3;
 }
 
+.deleteButton {
+  background-color:white;
+  border: 2px dotted rgb(199, 7, 7);
+  color: black;
+}
+
+.deleteButton:hover {
+  background-color: rgb(199, 7, 7);
+  color: white;
+  text-decoration: none;
+  border: 2px dotted rgb(199, 7, 7);
+}
+
 .site-nav {
   position: relative;
   margin-bottom: 10px;
+}
+
+/* Form Styles */
+
+.form-title {
+  font-size: 35px;
+}
+
+.form-button {
+  margin-top: 20px;
 }
 
 .form-group {
