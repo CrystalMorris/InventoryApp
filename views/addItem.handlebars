@@ -1,30 +1,46 @@
 <h2>Add an item to the inventory</h2>
 
-<form action = "/addItem/post" method="POST">
+<div class="site-nav">
+    <a href="/warehouses" class="back-to-warehouses">Back to All Warehouses</a>
+    <button type="button" class="buttononform" onclick="goPrev()">Back to Inventory</button>
+	<script>
+		function goPrev()
+		{
+			window.history.back();
+		}
+	</script>
+</div>
+
+<form action= "/addItem/post" method="POST" class="form-group">
 <label for="name">Name: </label>
-<input type="text" id="name" name = "name" required><br>
+<input type="text" class="form-control" id="name" name ="name" placeholder="Enter item name" required>
 
 <label for = "price">Price: $</label>
-<input type="text" id="price" name = "price" required><br>
+<input type="text" class="form-control" id="price" name = "price" placeholder="Enter price" required>
+
 <label for = "image">Image URL: </label>
-<input type="text" id="image" name = "image" required><br>
+<input type="text" class="form-control" id="image" name = "image" placeholder="Enter image URL" required>
+
 <label for = "description">Description: </label>
-<textarea  id="description" name = "description" rows="5" cols="50" required>Add Description here</textarea><br>
-    <label for="CategoryId">Select a category:</label>
-    <select id="CategoryId" name="CategoryId">
-        <option value=""></option>
-        {{#each allCategories}}
+<textarea class="form-control" id="description" name = "description" rows="5" cols="50" placeholder="Enter description" required></textarea>
+
+<label for="CategoryId">Select a category: </label>
+<select class="form-control" id="CategoryId" name="CategoryId">
+    <option value=""></option>
+    {{#each allCategories}}
         <option value ="{{this.id}}">{{this.name}}</option>
-        {{/each}}
+    {{/each}}
     </select>
-    <label for="WarehouseId">Select a warehouse:</label>
-    <select id="WarehouseId" name="WarehouseId">
-        <option value=""></option>
+
+<label for="WarehouseId">Select a warehouse:</label>
+<select class="form-control" id="WarehouseId" name="WarehouseId">
+    <option value=""></option>
         {{#each allWarehouses}}
-        <option value ="{{this.id}}">{{this.name}}</option>
+            <option value ="{{this.id}}">{{this.name}}</option>
         {{/each}}
-    </select><br>
+</select>
     {{!-- <label for="image">test file upload</label>
     <input type="file" accept="img/*" id="image" name = "image" ><br> --}}
-    <button type="submit">Add Item</button>
+<button type="submit" class="btn btn-primary formbtn">Add Item</button>
+
 </form>

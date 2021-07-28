@@ -38,12 +38,12 @@ a:hover {
   text-decoration: none;
 }
 
-.button {
+.buttonOneItem {
   position: fixed;
   margin-top: 50px;
   left: 50%;
   transform: translateX(-50%);
-  border: 2px dotted #ff746d;
+  border: 2px dotted #691969;
   background-color: white;
   color: black;
   padding: 5px 22px;
@@ -57,11 +57,34 @@ a:hover {
   font-family: 'Acme', sans-serif;
 }
 
-.button:hover {
-  background-color: #ff746d;
+.buttonOneItem:hover {
+  background-color: #691969;
   color: white;
   text-decoration: none;
-  border: 2px dotted #ff746d;
+  border: 2px dotted #691969;;
+}
+
+.buttononform {
+  left: 50%;
+  border: 2px dotted #691969;;
+  background-color: white;
+  color: black;
+  padding: 5px 22px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Acme', sans-serif;
+}
+
+.buttononform:hover {
+  background-color: #691969;;
+  color: white;
+  text-decoration: none;
+  border: 2px dotted #691969;;
 }
 
 h1 {
@@ -93,9 +116,9 @@ li {
   list-style-type: none;
 }
 
-form {
+/* form {
   margin-top: 40px;
-}
+} */
 
 .form-title {
   font-size: 35px;
@@ -120,16 +143,16 @@ form {
 
 .back-to-warehouses {
   background-color:white;
-  border: 2px dotted #ff746d;
+  border: 2px dotted #691969;;
   color: black;
   margin-right: 25px;
 }
 
 .back-to-warehouses:hover {
-  background-color: #ff746d;
+  background-color: #691969;;
   color: white;
   text-decoration: none;
-  border: 2px dotted #ff746d;
+  border: 2px dotted #691969;
 }
 
 .addItem {
@@ -148,4 +171,15 @@ form {
 .site-nav {
   position: relative;
   margin-bottom: 10px;
+}
+
+.form-group {
+  text-align: left;
+  max-width: 50%;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.formbtn {
+  margin-top: 30px;
 }
