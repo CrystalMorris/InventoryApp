@@ -1,6 +1,11 @@
 <h1>All Warehouses</h1>
 <h2>There are {{allWarehouses.length}} warehouses.</h2>
 
+<div class="site-nav">
+    <a href="/items" class="back-to-warehouses">See All Inventory</a>
+    <a href="/addItem" class="addItem">Add Item</a> 
+</div>
+
 {{#each allWarehouses}}  
     <div class="card col-md-4">
         <h3>{{name}}</h3>
