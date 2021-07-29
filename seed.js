@@ -15,7 +15,7 @@ const fs = require('fs').promises;
         const warehousePromises = warehouses.map(warehouse => Warehouse.create(warehouse))
         const categoryPromises = categories.map(category => Category.create(category))
         const itemPromises = items.map(item => Item.create(item))
-        await Promise.all(warehousePromises,itemPromises)
+        await Promise.all(warehousePromises,itemPromises,categoryPromises)
         console.log("db populated!")
     }
     

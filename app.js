@@ -72,12 +72,15 @@ app.get('/warehouses/:id', async (req, res) =>{
 
 //Delete an item from an inventory
 
-app.get('/item/:id/delete', async(req, res)=>{    
+app.delete('/item/:id/delete', async(req, res)=>{    
     const thisItem =await Item.findByPk(req.params.id)    
     const thisWarehouse = await  Warehouse.findByPk(thisItem.WarehouseId)
     await Item.destroy({where: {id: req.params.id}});  
-        console.log("this is app.js:79 " +JSON.stringify(thisWarehouse))
-        res.redirect('/warehouses/'+ thisWarehouse.id)
+    console.log("Item Deleted!!")
+    const currentItems = await Item.findAll({where: {WarehouseId : thisWarehouse.id}})
+    console.log("Current number of items in "+ thisWarehouse.name +": " +JSON.stringify(currentItems.length))
+//not ideal finish but it works for now
+    res.json(thisWarehouse)
     })
 
     
