@@ -82,4 +82,10 @@ app.put('/item/:id', async (req, res) => {
 
 ```
 
+RESTful
+
+REpresentational
+State
+Transfer
+
 
