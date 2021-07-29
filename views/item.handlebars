@@ -5,7 +5,6 @@
 <div class="row">
 	<h5>{{thisItem.description}}</h5>
 	<h5>Price: {{thisItem.price}}</h5>
-	{{!-- <h5>Quantity: {{thisItem.quantity}}</h5> --}}
 	<h5>Category: {{thisItem.Category.name}}</h5>
 </div>
 <div>
@@ -19,8 +18,6 @@
 </div> 
 
 <div>
-	{{!-- <a href="/item/{{thisItem.id}}/delete" class="deleteButton">delete this item</a> --}}
-	{{!-- <button type="button" class="button deleteButton">Back to Inventory</button> --}}
 
 	<button class="button deleteButton" id="delete-btn" data-item={{thisItem.id}} data-warehouse={{thisItem.Warehouse.id}}>delete this item</button>
 </div>
