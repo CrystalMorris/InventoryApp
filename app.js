@@ -24,10 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 
 seed();
-//GET to redirect to first page
-app.get('/', (req, res)=>{
-    res.redirect('/warehouses')
-})
+
 // // GET all items
 
 app.get('/items', async (req, res) => {
@@ -83,7 +80,11 @@ app.get('/item/:id/delete', async(req, res)=>{
         res.redirect('/warehouses/'+ thisWarehouse.id)
     })
 
-
+    
+//GET to redirect to first page
+app.get('/', (req, res)=>{
+    res.redirect('/warehouses')
+})
 
 app.listen(process.env.PORT||PORT, () => {
     sequelize.sync({force: true});
