@@ -24,7 +24,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 
 seed();
-
+//GET to redirect to first page
+app.get('/', (req, res)=>{
+    res.redirect('/warehouses')
+})
 // // GET all items
 
 app.get('/items', async (req, res) => {
