@@ -80,6 +80,7 @@ app.get('/item/:id/delete', async(req, res)=>{
         res.redirect('/warehouses/'+ thisWarehouse.id)
     })
 
+    
 //GET to redirect to first page
 app.get('/', (req, res)=>{
     res.redirect('/warehouses')
