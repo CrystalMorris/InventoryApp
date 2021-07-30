@@ -79,8 +79,7 @@ app.delete('/item/:id/delete', async(req, res)=>{
     console.log("Item Deleted!!")
     const currentItems = await Item.findAll({where: {WarehouseId : thisWarehouse.id}})
     console.log("Current number of items in "+ thisWarehouse.name +": " +JSON.stringify(currentItems.length))
-//not ideal finish but it works for now
-    res.json(thisWarehouse)
+    res.end()
     })
 
     
