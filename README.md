@@ -9,6 +9,16 @@ We have built an inventory app for toy resale shops around Texas. There are 3 wa
 You can view all inventory in each warehouse and also view more details for each item. 
 You can also add a new item to the inventory with the "add new toy" form.
 
+<a href="https://durian-toys.herokuapp.com/warehouses">View Demo</a>
+
+### Built With
+
+* [React.js](https://reactjs.org/)
+* [Express](https://expressjs.com/)
+* [Handlebars](https://handlebarsjs.com/)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Installation Instructions
 
 type in the terminal:
