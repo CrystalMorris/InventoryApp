@@ -17,8 +17,6 @@ You can also add a new item to the inventory with the "add new toy" form.
 * [Express](https://expressjs.com/)
 * [Handlebars](https://handlebarsjs.com/)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### Installation Instructions
 
 type in the terminal:
@@ -33,3 +31,6 @@ type in the terminal:
 4. Always tell each other when a pull request has been created.
 5. Never push to main.
 6. Don't eat the bunnies.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
